@@ -3,14 +3,21 @@ import store from '../store';
 import {Link} from 'react-router';
 
 const Schools = (props) => {
-  console.log(props)
   // const selectAlbum = props.selectAlbum;
 
   return (
     <div>
-      <h3>{props.selectedPlanet}</h3>
+      <h3>Schools</h3>
       <div className="row">
-      	<h4> Placeholder for school</h4>
+	      <ul>
+	      {
+	      	props.schools.map((school)=>{
+	      		return<li>{school.location}</li>
+	      	}
+	      		)
+
+	      }
+	      </ul>
       </div>
     </div>
   );

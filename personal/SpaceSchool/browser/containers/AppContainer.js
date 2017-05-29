@@ -6,6 +6,7 @@ import { connect } from 'react-redux'
 const mapStateToProps = function(state, addOwnProps){
 	return{
 		selectedPlanet: state.selectedPlanet,
+		schools: state.schools,
 		children: addOwnProps.children
 	}
 }
