@@ -1,9 +1,12 @@
 import React from 'react';
 import {Link} from 'react-router';
-
+import store from '../store';
 
 const Students = (props) => {
-  // const selectAlbum = props.selectAlbum;
+  const changeHandler = function(event){
+    console.log(event.target)
+    // props.updateSchool(event)
+  }
 
   return (
     <div>
@@ -12,12 +15,18 @@ const Students = (props) => {
         <ul>
         {
           props.students.map((student)=>{
-            return<li>{student.name}</li>
+            return <li key={student.id}>
+            <Link to={`/students/${student.id}`}>{student.name} </Link>
+
+            </li>
           }
             )
 
         }
         </ul>
+      {
+          props.children
+      }
       </div>
     </div>
   );

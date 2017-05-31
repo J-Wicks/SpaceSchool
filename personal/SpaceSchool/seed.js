@@ -26,7 +26,7 @@ var data = {
 };
 
 
-db.sync({force: true})
+db.sync({force:true})
 .then(function () {
   console.log("Dropped old data, now inserting data");
   const creatingStudents = Promise.map(data.Students, function (student) {
